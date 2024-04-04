@@ -37,7 +37,7 @@ function MainBanner() {
           className="sm:hidden"
           src="/unisalen-banner-mobile.jpg"
           alt="Unisalen banner principal"
-          width={320}
+          width={592}
           height={495}
         />
       </Link>
@@ -47,7 +47,7 @@ function MainBanner() {
 
 function UnisalenFirstContent() {
   return (
-    <section className="flex flex-col p-4 sm:p-0 sm:flex-row items-center justify-between mb-12 sm:mb-28 max-w-default mx-auto">
+    <section className="flex flex-col p-4 sm:p-0 sm:flex-row items-center justify-between mb-20 sm:mb-28 max-w-default mx-auto">
       <Image
         loading="lazy"
         quality={90}

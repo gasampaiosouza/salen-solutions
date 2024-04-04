@@ -17,7 +17,7 @@ const STEPS = [
 
 const Contact = () => {
   return (
-    <section className="flex gap-10 sm:gap-24 mt-10 px-4 sm:px-0 sm:mt-16 sm:pt-12 pb-36 justify-around flex-col md:flex-row max-w-default mx-auto">
+    <section className="flex gap-10 sm:gap-24 mt-10 px-4 sm:px-0 sm:mt-16 sm:pt-12 pb-16 sm:pb-36 justify-around flex-col md:flex-row max-w-default mx-auto relative">
       <div>
         <span className="text-subtitle mb-2 text-xs tracking-wider">CONTATO</span>
 

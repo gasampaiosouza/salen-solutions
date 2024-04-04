@@ -10,7 +10,7 @@ const Button = ({ children, className = '', secondary = false }: Props) => {
   return (
     <button
       className={twMerge(
-        'px-3 sm:px-6 py-[11px] text-sm bg-primary text-white font-semibold rounded-md hover:bg-primary-hover transition',
+        'px-4 sm:px-6 py-[11px] text-sm bg-primary text-white font-semibold rounded-md hover:bg-primary-hover transition',
         secondary && 'bg-secondary hover:bg-secondary-hover',
         className
       )}

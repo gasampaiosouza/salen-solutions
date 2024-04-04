@@ -1,6 +1,13 @@
 'use client';
 
-import { ArrowRight, CalendarIcon, ClockIcon, LocationPinIcon, WhatsappIcon } from '@/app/Icons';
+import {
+  ArrowRight,
+  CalendarIcon,
+  ClockIcon,
+  LocationPinIcon,
+  UnisalenBubble,
+  WhatsappIcon,
+} from '@/app/Icons';
 import Button from '@/app/components/Button';
 import CourseGoogleMap from '@/app/sections/CourseGoogleMap';
 import Courses from '@/app/sections/Courses';
@@ -19,9 +26,9 @@ const UnisalenCourse = ({ searchParams }: Props) => {
   const courseMessage = `Eu me interessei pelo curso: ${currentCourse?.title || ''}`;
 
   return (
-    <section>
+    <section className="relative">
       {/* one */}
-      <div className="w-full h-auto relative -mb-40 sm:mb-0">
+      <div className="w-full h-auto relative -mb-52 sm:mb-0">
         <img
           className="hidden sm:block"
           src="/unisalen-course-banner.jpg"
@@ -52,7 +59,7 @@ const UnisalenCourse = ({ searchParams }: Props) => {
         </div>
 
         {/* block */}
-        <div className="relative md:absolute -top-64 md:top-auto md:right-52 md:-bottom-24 rounded-lg bg-[#303135] p-4 sm:p-8 mx-4 sm:mx-0">
+        <div className="relative md:absolute -top-72 md:top-auto md:right-52 md:-bottom-24 rounded-lg bg-[#303135] p-4 sm:p-8 mx-4 sm:mx-0">
           <div className="mb-6">
             <h3 className="mb-4 sm:mb-2 text-default text-sm sm:text-base font-bold">
               Mais detalhes
@@ -91,7 +98,7 @@ const UnisalenCourse = ({ searchParams }: Props) => {
 
           <div className="flex gap-6 justify-between items-center">
             <Link className="w-full sm:w-auto" href="/contact-us">
-              <Button className="mt-4 py-2 text-secondary w-full sm:w-auto">
+              <Button className="mt-4 py-2 text-secondary w-full sm:w-auto border border-primary">
                 Quero participar
               </Button>
             </Link>
@@ -102,7 +109,7 @@ const UnisalenCourse = ({ searchParams }: Props) => {
               href={`https://wa.me/11961991011?text=${courseMessage}`}
             >
               <Button className="mt-4 py-2 bg-transparent border border-primary flex gap-2 items-center w-full sm:w-auto">
-                <WhatsappIcon className="w-5" /> Saiba mais
+                <WhatsappIcon className="w-[18px]" /> Saiba mais
               </Button>
             </Link>
           </div>

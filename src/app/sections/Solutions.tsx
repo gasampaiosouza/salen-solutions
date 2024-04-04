@@ -26,7 +26,7 @@ const ButtonGroup = renderButtonGroup({ CONTENT: SOLUTIONS });
 
 const Solutions = () => {
   return (
-    <section className="sm:mt-[94px] px-4 my-36 sm:mb-32 max-w-default mx-auto">
+    <section className="sm:mt-[94px] px-4 mt-12 mb-24 sm:mb-32 max-w-default mx-auto">
       <span className="text-subtitle mb-2 text-xs tracking-wider">SERVIÇOS</span>
 
       <h2 className="text-default text-2xl font-bold mb-2">Soluções</h2>

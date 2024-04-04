@@ -39,7 +39,7 @@ const Clients = () => {
           </Button>
         </div>
 
-        <div>
+        <div className='w-full sm:w-auto mt-12 sm:mt-0'>
           <ClientsMap />
         </div>
       </div>

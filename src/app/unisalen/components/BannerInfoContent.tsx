@@ -30,7 +30,7 @@ const ButtonGroup = renderButtonGroup({ CONTENT: BANNER_INFO_CONTENT, renderArro
 
 export default function BannerInfoContent() {
   return (
-    <div className="w-[calc(100%-16px)] sm:w-[calc(100%-60px)] bg-[#303135] text-white sm:py-8 sm:px-10 rounded-md ml-auto relative -top-[57px] py-4 min-h-[108px] sm:min-h-auto">
+    <div className="w-[calc(100%-16px)] sm:w-[calc(100%-60px)] bg-[#303135] text-white sm:py-8 sm:px-10 rounded-l-md ml-auto relative -top-[57px] py-4 min-h-[108px] sm:min-h-auto">
       <div className="hidden sm:flex sm:gap-6 sm:w-full justify-between">
         {BANNER_INFO_CONTENT.map((content, index) => (
           <div className="text-center gap-2 max-w-[300px]" key={index}>

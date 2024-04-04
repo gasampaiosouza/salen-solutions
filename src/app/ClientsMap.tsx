@@ -59,11 +59,11 @@ export const ClientsMap = () => {
   };
 
   return (
-    <div className="relative">
+    <div className="relative sm:w-[637px]">
       <svg
         className="w-full sm:w-auto"
-        width={637}
-        height={633}
+        // width={637}
+        // height={633}
         viewBox="0 0 637 633"
         fill="none"
         xmlns="http://www.w3.org/2000/svg"

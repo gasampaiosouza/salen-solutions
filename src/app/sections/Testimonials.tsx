@@ -27,7 +27,7 @@ const ButtonGroup = renderButtonGroup({
 const Testimonials = () => {
   return (
     <section className="unisalen testimonials p-4 sm:p-0 max-w-default m-auto mb-32 sm:mb-36">
-      <UnisalenBubble className="absolute right-0 -z-10" />
+      <UnisalenBubble className="absolute right-0 z-0 pointer-events-none" />
 
       <span className="text-[#F6F6F6] mb-2 text-xs tracking-wider">DEPOIMENTOS</span>
 
