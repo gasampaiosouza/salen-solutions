@@ -61,11 +61,11 @@ const About = () => {
           </Button>
         </div>
 
-        <div className="grid grid-cols-2 gap-4 sm:gap-16">
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-16 w-full sm:w-auto">
           {CARDS.map((card, index) => (
             <div
               className={twMerge(
-                'relative py-6 px-8 shadow-md bg-white max-w-72 rounded-md',
+                'relative py-6 px-8 shadow-md bg-white max-w-full sm:max-w-72 rounded-md',
                 index == 0 || index == 1 ? 'right-0 sm:right-10' : ''
               )}
               key={index}

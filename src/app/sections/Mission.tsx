@@ -27,8 +27,8 @@ type Props = {
 
 const Mission = ({ isHomePage = true }: Props) => {
   return (
-    <section className="my-32 sm:my-36 text-center relative">
-      {isHomePage && <HalfCircle className="absolute left-0 top-28 sm:top-0" />}
+    <section className="my-32 sm:my-36 text-center relative px-4 sm:px-0">
+      {isHomePage && <HalfCircle className="absolute left-0 top-40 sm:top-0 z-[-1]" />}
 
       <h2 className="text-default text-2xl font-bold mb-2">
         Nossa missão, visão e valores

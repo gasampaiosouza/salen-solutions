@@ -49,11 +49,15 @@ const Header = () => {
           </div>
 
           <div className="divide-y !flex flex-col">
+            <Link className="text-[--header-active-color] py-4" href="/">
+              Home
+            </Link>
+
             <Link className="text-[--header-active-color] py-4" href="/about-us">
               Sobre Nós
             </Link>
 
-            <Link className="text-primary py-4" href="/unisalen">
+            <Link className="text-[--header-active-color] py-4" href="/unisalen">
               UniSalen
             </Link>
 
