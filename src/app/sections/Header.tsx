@@ -3,7 +3,7 @@
 import Button from '@/app/components/Button';
 import Image from 'next/image';
 import Link from 'next/link';
-import { useEffect, useState } from 'react';
+import React, { useCallback, useEffect, useState } from 'react';
 import { twMerge } from 'tailwind-merge';
 
 import { slide as Menu } from 'react-burger-menu';
@@ -12,65 +12,90 @@ import { usePathname } from 'next/navigation';
 
 const TRANSPARENT_HEADER_PAGES = ['/', '/unisalen'];
 
+const HeaderMenuItems = [
+  { label: 'Home', href: '/', isButton: false, mobileOnly: true },
+  { label: 'Sobre Nós', href: '/about-us', isButton: false },
+  { label: 'UniSalen', href: '/unisalen', isButton: false },
+  { label: 'Contato', href: '/contact-us', isButton: true },
+];
+
 const Header = () => {
   const pathname = usePathname();
-  const [active, setActive] = useState(false);
+
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [activePathname, setActivePathname] = useState('');
+
+  const [isHeaderFilled, setIsHeaderFilled] = useState(false);
+
+  const handleScroll = useCallback((path: string) => {
+    const mustBeTransparent = TRANSPARENT_HEADER_PAGES.includes(path);
+    const THRESHOLD = 200;
+
+    setIsHeaderFilled(!mustBeTransparent || window.scrollY > THRESHOLD);
+  }, []);
+
+  const handlePathnameChange = useCallback((path: string) => {
+    setActivePathname(path);
+    setIsHeaderFilled(false);
+    setIsMenuOpen(false);
+  }, []);
 
   useEffect(() => {
     if (typeof window == 'undefined') return;
 
-    const handleScroll = () => {
-      const mustBeTransparent = TRANSPARENT_HEADER_PAGES.includes(pathname);
-      const THRESHOLD = 200;
+    handleScroll(pathname);
+    handlePathnameChange(pathname);
 
-      setActive(!mustBeTransparent || window.scrollY > THRESHOLD);
-    };
+    window.addEventListener('scroll', () => handleScroll(pathname));
 
-    handleScroll();
-
-    window.addEventListener('scroll', handleScroll);
-
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, [pathname]);
+    return () => window.removeEventListener('scroll', () => handleScroll(pathname));
+  }, [pathname, handleScroll, handlePathnameChange]);
 
   return (
     <header
       className={twMerge(
         'fixed top-0 z-50 md:pl-[80px] md:pr-[60px] md:py-5 flex justify-center md:justify-between items-center w-full transition',
-        active && 'bg-white shadow-md',
+        isHeaderFilled && 'bg-white shadow-md',
         'h-[80px] md:h-auto'
       )}
     >
       <div className="md:hidden">
-        <Menu className="px-4 py-6">
+        <Menu
+          className="px-4 py-6"
+          isOpen={isMenuOpen}
+          onOpen={() => setIsMenuOpen(true)}
+          onClose={() => setIsMenuOpen(false)}
+        >
           <div className="w-full !flex justify-between mb-6">
             <h2 className="text-lg font-bold">Menu</h2>
             <CloseIcon />
           </div>
 
           <div className="divide-y !flex flex-col">
-            <Link className="text-[--header-active-color] py-4" href="/">
-              Home
-            </Link>
+            {HeaderMenuItems.map(({ label, href, isButton, mobileOnly }) => {
+              const ButtonComponent = isButton ? Button : React.Fragment;
 
-            <Link className="text-[--header-active-color] py-4" href="/about-us">
-              Sobre Nós
-            </Link>
-
-            <Link className="text-[--header-active-color] py-4" href="/unisalen">
-              UniSalen
-            </Link>
-
-            <Link className="btn" href="/contact-us">
-              <Button className="mt-4 min-w-[158px]">Contato</Button>
-            </Link>
+              return (
+                <Link
+                  key={label}
+                  href={href}
+                  className={twMerge(
+                    'py-4',
+                    activePathname === href && 'text-primary',
+                    mobileOnly && 'md:hidden'
+                  )}
+                >
+                  <ButtonComponent className="mt-4 min-w-[158px]">{label}</ButtonComponent>
+                </Link>
+              );
+            })}
           </div>
         </Menu>
 
         <Link href="/" className="md:hidden">
           <Image
             className="max-h-[45px] w-auto"
-            src={active ? '/logo-dark.png' : '/logo.png'}
+            src={isHeaderFilled ? '/logo-dark.png' : '/logo.png'}
             alt="Salen Solutions logo"
             width={207}
             height={67}
@@ -82,7 +107,7 @@ const Header = () => {
         <Link href="/" className="hidden md:block -ml-6">
           <Image
             className="max-h-[67px] w-auto"
-            src={active ? '/logo-dark.png' : '/logo.png'}
+            src={isHeaderFilled ? '/logo-dark.png' : '/logo.png'}
             alt="Salen Solutions logo"
             width={207}
             height={67}
@@ -91,7 +116,10 @@ const Header = () => {
 
         <div className="items-center gap-12 hidden md:flex">
           <Link
-            className={twMerge('text-default transition', active && 'text-header-color-active')}
+            className={twMerge(
+              'text-default transition',
+              isHeaderFilled && 'text-header-color-active'
+            )}
             href="/about-us"
           >
             Sobre Nós

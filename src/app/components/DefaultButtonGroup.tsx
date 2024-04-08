@@ -20,8 +20,6 @@ const renderButtonGroup = ({
       carouselState: { currentSlide, slidesToShow },
     } = rest;
 
-    console.log({ currentSlide, slidesToShow });
-
     return (
       <div
         className={twMerge(
