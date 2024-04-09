@@ -10,7 +10,7 @@ import { slide as Menu } from 'react-burger-menu';
 import { CloseIcon } from '../Icons';
 import { usePathname } from 'next/navigation';
 
-const TRANSPARENT_HEADER_PAGES = ['/', '/unisalen'];
+const TRANSPARENT_HEADER_PAGES = ['/', '/unisalen', '/unisalen/course'];
 
 const HeaderMenuItems = [
   { label: 'Home', href: '/', isButton: false, mobileOnly: true },
@@ -21,6 +21,8 @@ const HeaderMenuItems = [
 
 const Header = () => {
   const pathname = usePathname();
+
+  const isUnisalen = pathname.includes('unisalen');
 
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [activePathname, setActivePathname] = useState('');
@@ -55,7 +57,7 @@ const Header = () => {
     <header
       className={twMerge(
         'fixed top-0 z-50 md:pl-[80px] md:pr-[60px] md:py-5 flex justify-center md:justify-between items-center w-full transition',
-        isHeaderFilled && 'bg-white shadow-md',
+        isHeaderFilled ? (isUnisalen ? 'bg-[#303135] shadow-md' : 'bg-white shadow-md') : '',
         'h-[80px] md:h-auto'
       )}
     >
@@ -73,7 +75,7 @@ const Header = () => {
 
           <div className="divide-y !flex flex-col">
             {HeaderMenuItems.map(({ label, href, isButton, mobileOnly }) => {
-              const ButtonComponent = isButton ? Button : React.Fragment;
+              const ButtonComponent = isButton ? Button : 'span';
 
               return (
                 <Link
@@ -85,7 +87,7 @@ const Header = () => {
                     mobileOnly && 'md:hidden'
                   )}
                 >
-                  <ButtonComponent className="mt-4 min-w-[158px]">{label}</ButtonComponent>
+                  <ButtonComponent className="min-w-[158px]">{label}</ButtonComponent>
                 </Link>
               );
             })}
@@ -107,7 +109,7 @@ const Header = () => {
         <Link href="/" className="hidden md:block -ml-6">
           <Image
             className="max-h-[67px] w-auto"
-            src={isHeaderFilled ? '/logo-dark.png' : '/logo.png'}
+            src={isHeaderFilled ? (isUnisalen ? '/logo.png' : '/logo-dark.png') : '/logo.png'}
             alt="Salen Solutions logo"
             width={207}
             height={67}
@@ -118,7 +120,11 @@ const Header = () => {
           <Link
             className={twMerge(
               'text-default transition',
-              isHeaderFilled && 'text-header-color-active'
+              isUnisalen
+                ? 'text-white'
+                : isHeaderFilled
+                ? 'text-header-active-color'
+                : 'text-header-active-color'
             )}
             href="/about-us"
           >

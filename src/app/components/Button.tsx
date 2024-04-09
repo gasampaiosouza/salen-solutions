@@ -1,12 +1,12 @@
 import { twMerge } from 'tailwind-merge';
 
-type Props = {
+interface Props extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   children: React.ReactNode;
   className?: string;
   secondary?: boolean;
-};
+}
 
-const Button = ({ children, className = '', secondary = false }: Props) => {
+const Button = ({ children, className = '', secondary = false, ...rest }: Props) => {
   return (
     <button
       className={twMerge(
@@ -14,6 +14,7 @@ const Button = ({ children, className = '', secondary = false }: Props) => {
         secondary && 'bg-secondary hover:bg-secondary-hover',
         className
       )}
+      {...rest}
     >
       {children}
     </button>

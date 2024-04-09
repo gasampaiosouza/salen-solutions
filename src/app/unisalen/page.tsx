@@ -103,9 +103,11 @@ function UnisalenSecondContent() {
           Junte-se a nós e impulsione sua carreira óptica!
         </p>
 
-        <Button secondary className="mt-4">
-          <Link href="/contact-us">Quero fazer parte</Link>
-        </Button>
+        <Link href="/contact-us">
+          <Button secondary className="mt-4">
+            Quero fazer parte
+          </Button>
+        </Link>
       </div>
 
       <Image

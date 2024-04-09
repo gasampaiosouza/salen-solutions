@@ -2,7 +2,7 @@ import Link from 'next/link';
 import { InstagramIcon, FacebookIcon, LinkedinIcon } from '../Icons';
 
 import Image from 'next/image';
-import GoToTopButton from './GoToTopButton';
+import GoToTopButton from '../sections/GoToTopButton';
 import { twMerge } from 'tailwind-merge';
 
 const SOCIALS = [

@@ -9,6 +9,11 @@ import { twMerge } from 'tailwind-merge';
 import axios from 'axios';
 
 import { toast } from 'sonner';
+import { z } from 'zod';
+import { zodResolver } from '@hookform/resolvers/zod';
+
+import InputMask from 'react-input-mask';
+import { useState } from 'react';
 
 const STEPS = [
   'Preencha a formulário ao lado com as suas informações de contato.',
@@ -24,8 +29,8 @@ const Contact = () => {
         <h2 className="text-default text-2xl font-bold mb-2">Fale Conosco</h2>
 
         <p className="text-sm text-paragraph max-w-2xl">
-          Alguma dúvida? Deseja fechar com a gente? Entre em contato por um desses meios e
-          fale com um de nossos especialistas.
+          Alguma dúvida? Deseja fechar com a gente? Entre em contato por um desses meios e fale com
+          um de nossos especialistas.
         </p>
 
         {STEPS.map((step, index) => (
@@ -65,8 +70,7 @@ function ContactOptions(props: React.HTMLProps<HTMLDivElement>) {
             <h3 className="text-default font-semibold text-base mb-2">WhatsApp</h3>
 
             <p className="text-paragraph text-xs mb-4 max-w-64">
-              Envie sua mensagem para nosso WhatsApp pelo número{' '}
-              <strong>(11) 96199-1011</strong>
+              Envie sua mensagem para nosso WhatsApp pelo número <strong>(11) 96199-1011</strong>
             </p>
 
             <Link
@@ -105,31 +109,42 @@ function ContactOptions(props: React.HTMLProps<HTMLDivElement>) {
     </div>
   );
 }
-
-type Inputs = {
-  name: string;
-  email: string;
-  phone: string;
-  company: string;
-  segment: string;
-};
-
 const FIELDS = [
   { name: 'name', label: 'Nome completo', placeholder: 'Jane Doe' },
   { name: 'email', label: 'E-mail corporativo', placeholder: 'janedoe@email.com' },
-  { name: 'phone', label: 'Número para contato', placeholder: '00 00000000' },
+  { name: 'phone', label: 'Número para contato', placeholder: '(00) 00000-0000' },
   { name: 'company', label: 'Empresa', placeholder: "Jane Doe's" },
 ];
+
+const FormSchema = z.object({
+  name: z.string().min(3),
+  email: z.string().email(),
+  phone: z.string().min(6),
+  company: z.string().min(1),
+  segment: z.string().min(3),
+});
+
+type Inputs = z.infer<typeof FormSchema>;
 
 function ContactForm() {
   const {
     register,
     handleSubmit,
     formState: { errors },
-  } = useForm<Inputs>();
+  } = useForm<Inputs>({ resolver: zodResolver(FormSchema) });
+
+  const [isSubmitting, setIsSubmitting] = useState<boolean | null>(null);
+
+  function later(delay: number) {
+    return new Promise(function (resolve) {
+      setTimeout(resolve, delay);
+    });
+  }
 
   const sendFormData = async (inputs: Inputs) => {
     const PUBLIC_KEY = '23aoUoi7j2VWmWXde';
+
+    setIsSubmitting(true);
 
     const data = {
       service_id: 'default_service',
@@ -144,6 +159,8 @@ function ContactForm() {
       toast.success('Formulário enviado com sucesso!');
     } catch (error) {
       toast.error('Houve um erro ao enviar o formulário. Tente novamente mais tarde.');
+    } finally {
+      setIsSubmitting(false);
     }
   };
 
@@ -152,35 +169,43 @@ function ContactForm() {
       className="bg-[--form-background] rounded-md px-6 py-8 min-w-full sm:min-w-[576px]"
       onSubmit={handleSubmit(sendFormData)}
     >
-      {FIELDS.map((field) => (
-        <div key={field.name}>
-          <label className="block mb-2 text-xs text-white" htmlFor="name">
-            {field.label}
-          </label>
-          <input
-            {...register(field.name as keyof Inputs, { required: true })}
-            placeholder={field.placeholder}
-            className={twMerge(
-              'px-4 py-2 w-full rounded-md text-[--input-color] bg-white text-sm outline-0 mb-6',
-              errors[field.name as keyof Inputs] && 'border-2 border-red-500'
+      {FIELDS.map((field) => {
+        const inputProps = {
+          ...register(field.name as keyof Inputs, { required: true }),
+          placeholder: field.placeholder,
+          className: twMerge(
+            'px-4 py-2 w-full rounded-md text-[--input-color] bg-white text-sm outline-0 mb-6',
+            errors[field.name as keyof Inputs] && 'border-2 border-red-500'
+          ),
+        };
+
+        return (
+          <div key={field.name}>
+            <label className="block mb-2 text-xs text-white" htmlFor="name">
+              {field.label}
+            </label>
+            {field.name === 'phone' ? (
+              <InputMask mask="(99) 99999-9999" maskChar={null} {...inputProps} />
+            ) : (
+              <input {...inputProps} />
             )}
-          />
-        </div>
-      ))}
+          </div>
+        );
+      })}
 
       <div>
         <label className="block mb-2 text-xs text-white" htmlFor="name">
           Segmento
         </label>
         <select
-          defaultValue="placeholder"
+          defaultValue=""
           className={twMerge(
             'px-4 py-2 w-full rounded-md text-[--input-color] bg-white text-sm outline-0 mb-6',
             errors.segment && 'border-2 border-red-500'
           )}
           {...register('segment', { required: true })}
         >
-          <option value="placeholder" disabled>
+          <option value="" disabled>
             Qual o segmento da sua empresa?
           </option>
           <option value="Serviço">Serviço</option>
@@ -200,7 +225,9 @@ function ContactForm() {
         </select>
       </div>
 
-      <Button className="w-full mt-2">Entre em contato</Button>
+      <Button className="w-full mt-2 disabled:cursor-not-allowed disabled:bg-[#b48a20]" disabled={isSubmitting == false}>
+        {isSubmitting != null ? (isSubmitting ? 'Enviando...' : 'Enviado!') : 'Entre em contato'}
+      </Button>
     </form>
   );
 }

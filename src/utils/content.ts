@@ -4,7 +4,7 @@ export const COURSES_CONTENT = [
     title: 'Consultoria de Negócios para profissionais',
     tags: ['Presencial', '40 horas'],
     description:
-      'Lorem ipsum dolor sit amet, consectetur adipiscing elit Lorem ipsum dolor sit amet, consectetur adipiscing elit Lorem ipsum dolor sit amet, consectetur adipiscing elit',
+      'Uma maneira eficaz para profissionais adquirirem conhecimentos práticos e habilidades essenciais para se destacarem no campo da consultoria empresarial, enquanto também têm a chance de interagir e colaborar com colegas da área.',
     image: '/courses/course-image-1.jpg',
   },
   {
@@ -12,7 +12,7 @@ export const COURSES_CONTENT = [
     title: 'Consultoria de Negócios',
     tags: ['Presencial', '100 horas'],
     description:
-      'Lorem ipsum dolor sit amet, consectetur adipiscing elit Lorem ipsum dolor sit amet, consectetur adipiscing elit Lorem ipsum dolor sit amet, consectetur adipiscing elit',
+      'Uma maneira eficaz para profissionais adquirirem conhecimentos práticos e habilidades essenciais para se destacarem no campo da consultoria empresarial, enquanto também têm a chance de interagir e colaborar com colegas da área.',
     image: '/courses/course-image-2.jpg',
   },
   {
@@ -20,7 +20,7 @@ export const COURSES_CONTENT = [
     title: 'Consultoria de Negócios',
     tags: ['Presencial', '100 horas'],
     description:
-      'Lorem ipsum dolor sit amet, consectetur adipiscing elit Lorem ipsum dolor sit amet, consectetur adipiscing elit Lorem ipsum dolor sit amet, consectetur adipiscing elit',
+      'Uma maneira eficaz para profissionais adquirirem conhecimentos práticos e habilidades essenciais para se destacarem no campo da consultoria empresarial, enquanto também têm a chance de interagir e colaborar com colegas da área.',
     image: '/courses/course-image-3.jpg',
   },
   {
@@ -28,7 +28,7 @@ export const COURSES_CONTENT = [
     title: 'Consultoria de Negócios para profissionais',
     tags: ['Presencial', '100 horas'],
     description:
-      'Lorem ipsum dolor sit amet, consectetur adipiscing elit Lorem ipsum dolor sit amet, consectetur adipiscing elit Lorem ipsum dolor sit amet, consectetur adipiscing elit',
+      'Uma maneira eficaz para profissionais adquirirem conhecimentos práticos e habilidades essenciais para se destacarem no campo da consultoria empresarial, enquanto também têm a chance de interagir e colaborar com colegas da área.',
     image: '/courses/course-image-4.jpg',
   },
   {
@@ -36,7 +36,7 @@ export const COURSES_CONTENT = [
     title: 'Consultoria de Negócios para profissionais',
     tags: ['Presencial', '40 horas'],
     description:
-      'Lorem ipsum dolor sit amet, consectetur adipiscing elit Lorem ipsum dolor sit amet, consectetur adipiscing elit Lorem ipsum dolor sit amet, consectetur adipiscing elit',
+      'Uma maneira eficaz para profissionais adquirirem conhecimentos práticos e habilidades essenciais para se destacarem no campo da consultoria empresarial, enquanto também têm a chance de interagir e colaborar com colegas da área.',
     image: '/courses/course-image-1.jpg',
   },
   {
@@ -44,7 +44,7 @@ export const COURSES_CONTENT = [
     title: 'Consultoria de Negócios',
     tags: ['Presencial', '100 horas'],
     description:
-      'Lorem ipsum dolor sit amet, consectetur adipiscing elit Lorem ipsum dolor sit amet, consectetur adipiscing elit Lorem ipsum dolor sit amet, consectetur adipiscing elit',
+      'Uma maneira eficaz para profissionais adquirirem conhecimentos práticos e habilidades essenciais para se destacarem no campo da consultoria empresarial, enquanto também têm a chance de interagir e colaborar com colegas da área.',
     image: '/courses/course-image-2.jpg',
   },
   {
@@ -52,7 +52,7 @@ export const COURSES_CONTENT = [
     title: 'Consultoria de Negócios',
     tags: ['Presencial', '100 horas'],
     description:
-      'Lorem ipsum dolor sit amet, consectetur adipiscing elit Lorem ipsum dolor sit amet, consectetur adipiscing elit Lorem ipsum dolor sit amet, consectetur adipiscing elit',
+      'Uma maneira eficaz para profissionais adquirirem conhecimentos práticos e habilidades essenciais para se destacarem no campo da consultoria empresarial, enquanto também têm a chance de interagir e colaborar com colegas da área.',
     image: '/courses/course-image-3.jpg',
   },
   {
@@ -60,7 +60,7 @@ export const COURSES_CONTENT = [
     title: 'Consultoria de Negócios para profissionais',
     tags: ['Presencial', '100 horas'],
     description:
-      'Lorem ipsum dolor sit amet, consectetur adipiscing elit Lorem ipsum dolor sit amet, consectetur adipiscing elit Lorem ipsum dolor sit amet, consectetur adipiscing elit',
+      'Uma maneira eficaz para profissionais adquirirem conhecimentos práticos e habilidades essenciais para se destacarem no campo da consultoria empresarial, enquanto também têm a chance de interagir e colaborar com colegas da área.',
     image: '/courses/course-image-4.jpg',
   },
 ];

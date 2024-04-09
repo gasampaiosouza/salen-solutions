@@ -1,13 +1,6 @@
 'use client';
 
-import {
-  ArrowRight,
-  CalendarIcon,
-  ClockIcon,
-  LocationPinIcon,
-  UnisalenBubble,
-  WhatsappIcon,
-} from '@/app/Icons';
+import { ArrowRight, CalendarIcon, ClockIcon, LocationPinIcon, WhatsappIcon } from '@/app/Icons';
 import Button from '@/app/components/Button';
 import CourseGoogleMap from '@/app/sections/CourseGoogleMap';
 import Courses from '@/app/sections/Courses';
@@ -48,13 +41,11 @@ const UnisalenCourse = ({ searchParams }: Props) => {
           <span className="text-[#F6F6F6] mb-2 text-xs tracking-wider">WORKSHOP</span>
 
           <h1 className="text-[#F6F6F6] text-lg sm:text-2xl font-bold mb-2">
-            Consultoria de Negócios para profissionais
+            {currentCourse?.title}
           </h1>
 
           <p className="text-xs sm:text-sm text-default max-w-lg mb-5">
-            Uma maneira eficaz para profissionais adquirirem conhecimentos práticos e habilidades
-            essenciais para se destacarem no campo da consultoria empresarial, enquanto também têm a
-            chance de interagir e colaborar com colegas da área.
+            {currentCourse?.description}
           </p>
         </div>
 
