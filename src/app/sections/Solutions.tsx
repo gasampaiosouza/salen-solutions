@@ -3,16 +3,8 @@
 import { getCarouselOptions } from '@/utils/default-variables';
 import { CrisisIcon, LampIcon, AssessorIcon, SearchIcon, CapIcon } from '../Icons';
 
-// import AwesomeSlider from 'react-awesome-slider';
-// import 'react-awesome-slider/dist/styles.css';
-
 import Carousel from 'react-multi-carousel';
 import renderButtonGroup from '../components/DefaultButtonGroup';
-
-// @ts-ignore
-// import withAutoplay from 'react-awesome-slider/dist/autoplay';
-
-// const AutoplaySlider = withAutoplay(AwesomeSlider);
 
 const SOLUTIONS = [
   { icon: CrisisIcon, title: 'Tráfego Pago' },

@@ -11,6 +11,7 @@ import { CloseIcon } from '../Icons';
 import { usePathname } from 'next/navigation';
 
 const TRANSPARENT_HEADER_PAGES = ['/', '/unisalen', '/unisalen/course'];
+const DARK_LOGO_PAGES = ['/'];
 
 const HeaderMenuItems = [
   { label: 'Home', href: '/', isButton: false, mobileOnly: true },
@@ -45,8 +46,8 @@ const Header = () => {
   useEffect(() => {
     if (typeof window == 'undefined') return;
 
-    handleScroll(pathname);
     handlePathnameChange(pathname);
+    handleScroll(pathname);
 
     window.addEventListener('scroll', () => handleScroll(pathname));
 
@@ -109,7 +110,7 @@ const Header = () => {
         <Link href="/" className="hidden md:block -ml-6">
           <Image
             className="max-h-[67px] w-auto"
-            src={isHeaderFilled ? (isUnisalen ? '/logo.png' : '/logo-dark.png') : '/logo.png'}
+            src={DARK_LOGO_PAGES.includes(pathname) ? '/logo-dark.png' : isHeaderFilled ? (isUnisalen ? '/logo.png' : '/logo-dark.png') : '/logo.png'}
             alt="Salen Solutions logo"
             width={207}
             height={67}

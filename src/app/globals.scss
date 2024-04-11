@@ -100,7 +100,7 @@ select {
   display: flex;
   flex-direction: row-reverse;
   justify-content: space-between;
-  max-width: 130px;
+  max-width: 160px;
   margin: auto;
   position: relative;
   bottom: 24px;
@@ -114,7 +114,7 @@ select {
 }
 
 .awssld__bullets {
-  bottom: 29px !important;
+  bottom: 28px !important;
   z-index: 2 !important;
 
   button {
