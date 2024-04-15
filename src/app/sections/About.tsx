@@ -34,7 +34,7 @@ const About = () => {
           <span className="text-subtitle mb-2 text-xs tracking-wider">SOBRE NÓS</span>
 
           <h2 className="text-default text-2xl font-bold mb-4 sm:mb-2">
-            Salen Solutions Consultoria de Negócios
+            Salen Solutions - O Domínio sobre o marketing
           </h2>
 
           <p className="text-sm text-paragraph max-w-2xl">

@@ -135,12 +135,6 @@ function ContactForm() {
 
   const [isSubmitting, setIsSubmitting] = useState<boolean | null>(null);
 
-  function later(delay: number) {
-    return new Promise(function (resolve) {
-      setTimeout(resolve, delay);
-    });
-  }
-
   const sendFormData = async (inputs: Inputs) => {
     const PUBLIC_KEY = '23aoUoi7j2VWmWXde';
 
