@@ -8,7 +8,22 @@ import withAutoplay from 'react-awesome-slider/dist/autoplay';
 
 const AutoplaySlider = withAutoplay(AwesomeSlider);
 
-export default function MainBanner() {
+type Props = {
+  showOldBanners?: boolean;
+};
+
+export default function MainBanner({ showOldBanners }: Props) {
+  const BANNERS = showOldBanners
+    ? ['/main-banner.jpg', '/main-banner.jpg', '/main-banner.jpg', '/main-banner.jpg']
+    : [
+        '/main-banner/banner-1.jpg',
+        '/main-banner/banner-2.jpg',
+        '/main-banner/banner-3.jpg',
+        '/main-banner/banner-4.jpg',
+        '/main-banner/banner-5.jpg',
+        '/main-banner/banner-6.jpg',
+      ];
+
   return (
     <section className="container-lg mx-auto main-banner">
       <div className="hidden sm:block">
@@ -20,12 +35,9 @@ export default function MainBanner() {
           buttonContentLeft={SliderArrowLeft}
           buttonContentRight={SliderArrowRight}
         >
-          <div data-src="/main-banner/banner-1.jpg" />
-          <div data-src="/main-banner/banner-2.jpg" />
-          <div data-src="/main-banner/banner-3.jpg" />
-          <div data-src="/main-banner/banner-4.jpg" />
-          <div data-src="/main-banner/banner-5.jpg" />
-          <div data-src="/main-banner/banner-6.jpg" />
+          {BANNERS.map((banner, index) => (
+            <div key={index} data-src={banner} />
+          ))}
         </AutoplaySlider>
       </div>
 

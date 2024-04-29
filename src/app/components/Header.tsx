@@ -8,10 +8,9 @@ import { twMerge } from 'tailwind-merge';
 
 import { slide as Menu } from 'react-burger-menu';
 import { CloseIcon } from '../Icons';
-import { usePathname } from 'next/navigation';
+import { usePathname, useSearchParams } from 'next/navigation';
 
 const TRANSPARENT_HEADER_PAGES = ['/', '/unisalen', '/unisalen/course'];
-const DARK_LOGO_PAGES = ['/'];
 
 const HeaderMenuItems = [
   { label: 'Home', href: '/', isButton: false, mobileOnly: true },
@@ -22,6 +21,8 @@ const HeaderMenuItems = [
 
 const Header = () => {
   const pathname = usePathname();
+  const searchParams = useSearchParams();
+  const DARK_LOGO_PAGES = [searchParams.get('oldBanner') ? '' : '/'];
 
   const isUnisalen = pathname.includes('unisalen');
 

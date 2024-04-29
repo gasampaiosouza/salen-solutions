@@ -6,10 +6,14 @@ import Clients from './sections/Clients';
 import Mission from './sections/Mission';
 import Faq from './sections/Faq';
 
-export default function Home() {
+type Props = {
+  searchParams: { [key: string]: string | string[] | undefined };
+};
+
+export default function Home({ searchParams }: Props) {
   return (
     <>
-      <MainBanner />
+      <MainBanner showOldBanners={!!searchParams.oldBanner} />
       <Contact />
       <About />
       <Solutions />

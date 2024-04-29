@@ -136,7 +136,7 @@ const UnisalenCourse = ({ searchParams }: Props) => {
       </section>
 
       {/* three block */}
-      <section className="relative flex justify-center items-center mb-32 sm:mb-36 max-w-[calc(100%-32px)] sm:max-w-default m-auto">
+      {/* <section className="relative flex justify-center items-center mb-32 sm:mb-36 max-w-[calc(100%-32px)] sm:max-w-default m-auto">
         <div className="absolute top-7 left-2 w-[calc(100%-16px)] sm:w-auto sm:top-10 sm:left-10 rounded-lg bg-[#303135] p-6 z-10">
           <h3 className="mb-4 text-default text-sm sm:text-base font-bold">Local do evento</h3>
 
@@ -162,7 +162,7 @@ const UnisalenCourse = ({ searchParams }: Props) => {
         </div>
 
         <CourseGoogleMap />
-      </section>
+      </section> */}
 
       <section className="unisalen-course">
         <Courses currentCourseID={courseId} />

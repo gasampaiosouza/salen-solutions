@@ -136,13 +136,13 @@ function ContactForm() {
   const [isSubmitting, setIsSubmitting] = useState<boolean | null>(null);
 
   const sendFormData = async (inputs: Inputs) => {
-    const PUBLIC_KEY = '23aoUoi7j2VWmWXde';
+    const PUBLIC_KEY = 'KMCLTUdZtLMWrTa0W';
 
     setIsSubmitting(true);
 
     const data = {
       service_id: 'default_service',
-      template_id: 'template_ibevyxi',
+      template_id: 'template_44qw0m3',
       user_id: PUBLIC_KEY,
       template_params: inputs,
     };
