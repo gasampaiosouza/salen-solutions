@@ -21,8 +21,9 @@ const HeaderMenuItems = [
 
 const Header = () => {
   const pathname = usePathname();
-  const searchParams = useSearchParams();
-  const DARK_LOGO_PAGES = [searchParams.get('oldBanner') ? '' : '/'];
+  // const searchParams = useSearchParams();
+  // const DARK_LOGO_PAGES = [searchParams.get('oldBanner') ? '' : '/'];
+  const DARK_LOGO_PAGES = ['/'];
 
   const isUnisalen = pathname.includes('unisalen');
 

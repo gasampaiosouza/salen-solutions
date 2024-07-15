@@ -121,7 +121,7 @@ function Course({ course }: { course: (typeof COURSES_CONTENT)[0] }) {
 
       <p className="text-xs text-paragraph line-clamp-2	min-h-10">{course.description}</p>
 
-      <Link href={`/unisalen/course?id=${course.id}`}>
+      <Link href={`/unisalen/course/${course.id}`}>
         <Button secondary className="mt-4 py-2 w-full sm:w-auto">
           Participar
         </Button>

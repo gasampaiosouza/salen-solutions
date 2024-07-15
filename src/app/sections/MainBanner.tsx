@@ -8,21 +8,21 @@ import withAutoplay from 'react-awesome-slider/dist/autoplay';
 
 const AutoplaySlider = withAutoplay(AwesomeSlider);
 
-type Props = {
-  showOldBanners?: boolean;
-};
+// type Props = {
+//   showOldBanners?: boolean;
+// };
 
-export default function MainBanner({ showOldBanners }: Props) {
-  const BANNERS = showOldBanners
-    ? ['/main-banner.jpg', '/main-banner.jpg', '/main-banner.jpg', '/main-banner.jpg']
-    : [
-        '/main-banner/banner-1.jpg',
-        '/main-banner/banner-2.jpg',
-        '/main-banner/banner-3.jpg',
-        '/main-banner/banner-4.jpg',
-        '/main-banner/banner-5.jpg',
-        '/main-banner/banner-6.jpg',
-      ];
+export default function MainBanner() {
+  const BANNERS =
+    // showOldBanners ? ['/main-banner.jpg', '/main-banner.jpg', '/main-banner.jpg', '/main-banner.jpg'] :
+    [
+      '/main-banner/banner-1.jpg',
+      '/main-banner/banner-2.jpg',
+      '/main-banner/banner-3.jpg',
+      '/main-banner/banner-4.jpg',
+      '/main-banner/banner-5.jpg',
+      '/main-banner/banner-6.jpg',
+    ];
 
   return (
     <section className="container-lg mx-auto main-banner">

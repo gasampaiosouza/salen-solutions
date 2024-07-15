@@ -12,6 +12,7 @@ import './globals.scss';
 import Container from './components/Container';
 
 import NextTopLoader from 'nextjs-toploader';
+import { Suspense } from 'react';
 
 const poppins = Poppins({
   subsets: ['latin'],
@@ -24,6 +25,10 @@ export const metadata: Metadata = {
     'Nasce uma gigante no segmento óptico! A Salen Solutions, foi desenvolvida para atender as necessidades de todos os proprietários, sócios e investidores.',
 };
 
+function HeaderFallback() {
+  return <>Carregando...</>;
+}
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -33,7 +38,9 @@ export default function RootLayout({
     <html lang="en">
       <body className={twMerge(poppins.className)}>
         <Container>
-          <Header />
+          <Suspense fallback={<HeaderFallback />}>
+            <Header />
+          </Suspense>
           <NextTopLoader color="#d8a31e" shadow={false} showSpinner={false} initialPosition={0.3} />
 
           {children}

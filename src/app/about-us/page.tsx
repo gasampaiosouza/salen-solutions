@@ -34,10 +34,8 @@ const AboutUs = () => {
 
       <section className="pt-8 sm:pt-24 pb-14 sm:pb-40 flex justify-center items-center">
         <h1 className="text-2xl text-center sm:text-5xl text-default max-w-[800px] font-bold">
-          <strong className="bg-secondary py-1 px-2 text-white rounded-lg">
-            Salen Solutions,
-          </strong>{' '}
-          a sua parceira no domínio sobre o marketing.
+          <strong className="bg-secondary py-1 px-2 text-white rounded-lg">Salen Solutions,</strong>{' '}
+          a sua parceira.
         </h1>
       </section>
 
@@ -51,16 +49,21 @@ const AboutUs = () => {
             </h2>
 
             <p className="text-sm text-paragraph max-w-2xl">
-              A Salen Solutions foi criada para atender às necessidades de proprietários,
-              sócios e investidores que buscam prosperar no mercado em constante
-              crescimento. Sabemos que gerir um negócio pode ser complexo, e é aí que
-              entramos.
+              A Salen Solutions foi criada para atender às necessidades de proprietários, sócios e
+              investidores que buscam prosperar no mercado em constante crescimento. Sabemos que
+              gerir um negócio pode ser complexo, e é aí que entramos.
             </p>
 
             <p className="text-sm text-paragraph max-w-2xl mt-5">
-              O mercado nacional está em constante evolução, e nossa missão é colaborar
-              com o crescimento, a estabilidade e a perenidade de seu empreendimento.
-              Permita-nos apresentar: Salen Solutions, a sua parceira no marketing 360.
+              Com a Salen Solutions, você tem um marketing feito sob medida para as necessidades da
+              sua empresa. Seja para impulsionar suas vendas, aumentar o brand awareness ou
+              conquistar novos clientes, nós temos a solução ideal para você.
+            </p>
+
+            <p className="text-sm text-paragraph max-w-2xl mt-5">
+              O mercado nacional está em constante evolução, e nossa missão é colaborar com o
+              crescimento, a estabilidade e a perenidade de seu empreendimento. Permita-nos
+              apresentar: Salen Solutions, a sua parceira no marketing 360.
             </p>
           </div>
 
@@ -74,7 +77,7 @@ const AboutUs = () => {
           />
         </div>
 
-        <div className='flex'>
+        <div className="flex">
           <Image
             quality={100}
             className="rounded-md"
@@ -87,15 +90,13 @@ const AboutUs = () => {
       </section>
 
       <section className="my-32 sm:my-36 flex flex-col items-center justify-center">
-        <h2 className="text-default text-2xl font-bold mb-4">
-          Consultoria especializada
-        </h2>
+        <h2 className="text-default text-2xl font-bold mb-4">Consultoria especializada</h2>
 
         <p className="text-sm text-paragraph max-w-6xl text-center mb-12">
-          O mercado óptico é altamente competitivo, exigindo expertise para impulsionar as
-          vendas. Na Salen Solutions, oferecemos serviços que capacitam empresas ópticas a
-          criar estratégias de alta qualidade, aumentando o reconhecimento da marca e
-          gerando receita de forma consistente.
+          O mercado óptico é altamente competitivo, exigindo expertise para impulsionar as vendas.
+          Na Salen Solutions, oferecemos serviços que capacitam empresas ópticas a criar estratégias
+          de alta qualidade, aumentando o reconhecimento da marca e gerando receita de forma
+          consistente.
         </p>
 
         <div className="flex flex-col sm:flex-row gap-20">
@@ -131,12 +132,11 @@ const AboutUs = () => {
           />
 
           <p className="text-sm text-paragraph max-w-2xl mt-12">
-            Participar de nossas palestras e workshops não apenas permite a atualização
-            contínua sobre as tendências mais recentes, mas também oferece a chance de
-            adquirir habilidades essenciais para se destacar no competitivo cenário da
-            óptica. Este é um caminho valioso para alunos e profissionais que desejam se
-            destacar entre os melhores do setor óptico. Junte-se a nós e impulsione sua
-            carreira óptica!
+            Participar de nossas palestras e workshops não apenas permite a atualização contínua
+            sobre as tendências mais recentes, mas também oferece a chance de adquirir habilidades
+            essenciais para se destacar no competitivo cenário da óptica. Este é um caminho valioso
+            para alunos e profissionais que desejam se destacar entre os melhores do setor óptico.
+            Junte-se a nós e impulsione sua carreira óptica!
           </p>
 
           <Link
@@ -162,29 +162,27 @@ const AboutUs = () => {
           <h2 className="text-default text-2xl font-bold mb-4">UniSalen</h2>
 
           <p className="text-sm text-paragraph max-w-2xl">
-            Unisalen, foi a primeira universidade optical, criada com o objetivo de formar
-            pessoas no ramo óptico, trazendo qualidade de vendas, atendimento e
-            credibilidade. A Unisalen é conhecida por sua dedicação em enriquecer o
-            conhecimento dos alunos e profissionais do setor óptico ao longo do ano, por
-            meio de uma série de palestras e workshops envolventes. Estes eventos têm como
-            principal objetivo a exploração de tópicos cruciais para a indústria óptica,
-            proporcionando valiosas perspectivas de crescimento para todos os alunos
-            integrantes.
+            Unisalen, foi a primeira universidade optical, criada com o objetivo de formar pessoas
+            no ramo óptico, trazendo qualidade de vendas, atendimento e credibilidade. A Unisalen é
+            conhecida por sua dedicação em enriquecer o conhecimento dos alunos e profissionais do
+            setor óptico ao longo do ano, por meio de uma série de palestras e workshops
+            envolventes. Estes eventos têm como principal objetivo a exploração de tópicos cruciais
+            para a indústria óptica, proporcionando valiosas perspectivas de crescimento para todos
+            os alunos integrantes.
           </p>
 
           <p className="text-sm text-paragraph max-w-2xl">
-            Nossas palestras são conduzidas por renomados especialistas do ramo óptico com
-            uma vasta experiência no mercado óptico. Nossos palestrantes compartilham
-            conhecimentos sobre uma ampla gama de temas, abrangendo desde as mais recentes
-            tendências do mercado óptico até estratégias eficazes de marketing, vendas e
-            gestão de óticas, além de apresentar inovações tecnológicas impactantes.
+            Nossas palestras são conduzidas por renomados especialistas do ramo óptico com uma vasta
+            experiência no mercado óptico. Nossos palestrantes compartilham conhecimentos sobre uma
+            ampla gama de temas, abrangendo desde as mais recentes tendências do mercado óptico até
+            estratégias eficazes de marketing, vendas e gestão de óticas, além de apresentar
+            inovações tecnológicas impactantes.
           </p>
 
           <p className="text-sm text-paragraph max-w-2xl mt-5 sm:mb-10">
-            Os workshops são voltados para o desenvolvimento de habilidades específicas
-            para o mercado óptico. Alguns dos temas abordados são: atualização em lentes
-            oftálmicas, diagnóstico e prescrição de óculos, venda consultiva, gestão
-            financeira de óticas.
+            Os workshops são voltados para o desenvolvimento de habilidades específicas para o
+            mercado óptico. Alguns dos temas abordados são: atualização em lentes oftálmicas,
+            diagnóstico e prescrição de óculos, venda consultiva, gestão financeira de óticas.
           </p>
 
           {/* desktop positioned image */}

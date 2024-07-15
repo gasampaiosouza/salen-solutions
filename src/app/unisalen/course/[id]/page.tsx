@@ -1,5 +1,3 @@
-'use client';
-
 import { ArrowRight, CalendarIcon, ClockIcon, LocationPinIcon, WhatsappIcon } from '@/app/Icons';
 import Button from '@/app/components/Button';
 import CourseGoogleMap from '@/app/sections/CourseGoogleMap';
@@ -8,12 +6,14 @@ import { COURSES_CONTENT } from '@/utils/content';
 import { parsePrice } from '@/utils/parse-price';
 import Link from 'next/link';
 
-type Props = {
-  searchParams: { [key: string]: string | string[] | undefined };
-};
+export async function generateStaticParams() {
+  const ids = COURSES_CONTENT.map((course) => String(course.id));
 
-const UnisalenCourse = ({ searchParams }: Props) => {
-  const courseId = Number(searchParams.id);
+  return ids.map(id => ({ id }));
+}
+
+const UnisalenCourse = ({ params }: { params: { id: string } }) => {
+  const courseId = Number(params.id);
 
   const currentCourse = COURSES_CONTENT.find((course) => course.id === courseId);
   const courseMessage = `Eu me interessei pelo curso: ${currentCourse?.title || ''}`;
