@@ -52,7 +52,7 @@ function FAQItem({ item }: { item: (typeof ITEMS)[0] }) {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <div className="py-4 first:border-t last:!border-b">
+    <div className="py-4 first:border-t last:!border-b cursor-pointer">
       <div
         onClick={() => setIsOpen((open) => !open)}
         className="flex justify-between items-center select-none"

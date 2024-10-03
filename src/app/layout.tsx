@@ -19,10 +19,25 @@ const poppins = Poppins({
   weight: ['400', '500', '600', '700'],
 });
 
+const MDTitle = {
+  template: 'Salen Solutions - %s',
+  default: 'Salen Solutions',
+};
+
+const MDDescription =
+  'Nasce uma gigante no segmento óptico! A Salen Solutions, foi desenvolvida para atender as necessidades de todos os proprietários, também e investidores.';
+
 export const metadata: Metadata = {
-  title: 'Salen Solutions',
-  description:
-    'Nasce uma gigante no segmento óptico! A Salen Solutions, foi desenvolvida para atender as necessidades de todos os proprietários, sócios e investidores.',
+  title: MDTitle,
+  description: MDDescription,
+  openGraph: {
+    title: MDTitle,
+    description: MDDescription,
+    images: '/opengraph-image.png'
+  },
+
+  metadataBase: new URL('https://salensolutions.com.br'),
+  alternates: { canonical: '/' },
 };
 
 function HeaderFallback() {

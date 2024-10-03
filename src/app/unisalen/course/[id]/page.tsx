@@ -6,6 +6,12 @@ import { COURSES_CONTENT } from '@/utils/content';
 import { parsePrice } from '@/utils/parse-price';
 import Link from 'next/link';
 
+import { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'Cursos Unisalen',
+};
+
 export async function generateStaticParams() {
   const ids = COURSES_CONTENT.map((course) => String(course.id));
 
@@ -69,7 +75,7 @@ const UnisalenCourse = ({ params }: { params: { id: string } }) => {
             <div className="flex items-center gap-2">
               <LocationPinIcon />
               <span className="text-default text-xs sm:text-sm">
-                Presencial- Av. Paulista - Bela Vista, SP
+                Presencial - Av. Paulista - Bela Vista, SP
               </span>
             </div>
           </div>

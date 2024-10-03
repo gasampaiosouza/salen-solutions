@@ -6,6 +6,12 @@ import Clients from './sections/Clients';
 import Mission from './sections/Mission';
 import Faq from './sections/Faq';
 
+import { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'Salen Solutions - O Domínio Sobre o Marketing',
+};
+
 export default function Home() {
   return (
     <>

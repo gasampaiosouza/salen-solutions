@@ -4,6 +4,12 @@ import Link from 'next/link';
 import { ArrowRight } from '../Icons';
 import Mission from '../sections/Mission';
 
+import { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'Sobre nós',
+};
+
 const CONSULTANCY_ITEMS = [
   {
     title: 'Assessoria',

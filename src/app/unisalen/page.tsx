@@ -7,6 +7,13 @@ import Testimonials from '../sections/Testimonials';
 import Contact from '../sections/Contact';
 import BannerInfoContent from './components/BannerInfoContent';
 
+import { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'Unisalen',
+};
+
+
 const Unisalen = () => {
   return (
     <>

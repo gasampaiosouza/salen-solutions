@@ -1,6 +1,12 @@
 import Breadcrumb from '../components/Breadcrumb';
 import Contact from '../sections/Contact';
 
+import { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'Entre em Contato',
+};
+
 const AboutUs = () => {
   return (
     <div className="mt-28 sm:mt-36 sm:px-16">
