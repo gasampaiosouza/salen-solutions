@@ -15,7 +15,7 @@ const center = {
 function CourseGoogleMap() {
   const { isLoaded } = useJsApiLoader({
     id: 'google-map-script',
-    googleMapsApiKey: 'AIzaSyBuhigFlQ0DoGZi8jbqRukmRGbJQnm6gQo',
+    googleMapsApiKey: '',
   });
 
   const [map, setMap] = useState<google.maps.Map | null>(null);
